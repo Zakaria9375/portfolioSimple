@@ -1,0 +1,173 @@
+{
+	"projects" : [
+		{
+			"id": 1,
+			"title": "Kasper2",
+			"about" : "Web template",
+			"techs": ["HTML", "CSS", "Javascript","Vue", "CSS", "Javascript"],
+			"photo": "shuffle-02.jpg",
+			"description": {},
+			"top": false,
+			"active": true
+		},
+		{
+			"id": 2,
+			"title": "Kasper",
+			"about" : "Web template",
+			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"repos": [
+				{"title": "Github", "link": ""},
+				{"title": "Docker", "link": ""}, 
+				{"title": "Live", "link": ""}
+			],
+			"photo": "shuffle-02.jpg",
+			"gallery": [
+				"cat-01.jpg",
+				"cat-02.jpg",
+				"cat-03.jpg",
+				"cat-04.jpg",
+				"cat-05.jpg",
+				"cat-06.jpg"
+			],
+			"description": "Solar Massasje is a Norwegian professional maseur marketing website. The site runs on WordPress CMS and utilizes modern design with good user experience.",
+			"top": true,
+			"active": true
+		
+		},		
+		{
+			"id": 3,
+			"title": "Kasper3",
+			"about" : "Web template",
+			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"photo": "shuffle-02.jpg",
+			"description": {},
+			"top": false,
+			"active": true
+		},
+		{
+			"id": 4,
+			"title": "Kasper4",
+			"about" : "Web template",
+			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"photo": "shuffle-02.jpg",
+			"description": {},
+			"top": true,
+			"active": true
+		}
+	],
+	"MainLinks": [
+		{
+			"id": 1,
+			"name": "Home",
+			"iclass": "fa-solid fa-house-chimney",
+			"url": "/"
+		},
+		{
+			"id": 2,
+			"name": "About",
+			"iclass": "fa-solid fa-circle-info",
+			"url": "/about"
+		},				
+		{
+			"id": 3,
+			"name": "Portfolio",
+			"iclass": "fa-regular fa-folder-open",
+			"url": "/portfolio"
+		},
+		{
+			"id": 4,
+			"name": "Contact",
+			"iclass": "fa-solid fa-message",
+			"url": "/contact"
+		}	
+	],
+	"MainSkills": [
+		{
+			"id": 1,
+			"name": "Vue",
+			"source": "vue.svg"
+		},
+		{
+			"id": 2,
+			"name": "Javascript",
+			"source": "js.svg"
+		},
+		{
+			"id": 3,
+			"name": "Spring",
+			"source": "springBoot.svg"
+		},
+		{
+			"id": 4,
+			"name": "Sass",
+			"source": "sass.svg"
+		}
+	],
+	"Skills": [
+		{
+			"id": 1,
+			"name": "Vue",
+			"source": "vue.svg",
+			"category": "frontend"
+		},
+		{
+			"id": 2,
+			"name": "Javascript",
+			"source": "js.svg",
+			"category": "frontend"
+		},
+		{
+			"id": 3,
+			"name": "HTML",
+			"source": "html.svg",
+			"category": "frontend"
+		},
+		{
+			"id": 4,
+			"name": "CSS",
+			"source": "css.svg",
+			"category": "frontend"
+		},
+		{
+			"id": 5,
+			"name": "Sass",
+			"source": "sass.svg",
+			"category": "frontend"
+		},
+		{
+			"id": 6,
+			"name": "Java",
+			"source": "java.svg",
+			"category": "backend"
+		},
+		{
+			"id": 7,
+			"name": "Spring",
+			"source": "springBoot.svg",
+			"category": "backend"
+		},
+		{
+			"id": 8,
+			"name": "MYSQL",
+			"source": "mysql.svg",
+			"category": "database"
+		},
+		{
+			"id": 9,
+			"name": "Docker",
+			"source": "docker.svg",
+			"category": "tool"
+		},
+		{
+			"id": 10,
+			"name": "Jenkins",
+			"source": "jenkins.svg",
+			"category": "tool"
+		}
+	],
+	"Credit": [
+		{
+			"title": "Google It support"
+		}
+	]
+}

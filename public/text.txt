@@ -1,0 +1,429 @@
+--tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)
+.shadow, .shadow-lg {
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+box shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)
+
+my mindset
+I have never been satisfied of my achievements. I have this kind of personality that makes me going to the hardest challenge to do. I always work hard to be distinctive. And as a Developer I do not learn by doing.. I have to start with the basics and the principles then implement by watching a tutorial then implement alone by trying to do my own projects with my own ideas 
+
+my personality
+You're gonna find me friendly, smiling at the begining of any conversation and, after staying in front of the machine for 12 hours per day, most probably will be silent most of the time
+
+My learning journey
+it started with Backend technologies, Java :) and spring boot, MYSQL, docker, Jenkins, I could not bring my knowledge to life without forntend, of course. So, I redirected myself to the forntend technologies starting from the very basics HTML and CSS to Javascript and Vue. 
+
+my story
+I have a mechanical engineering background after a master degree in Riga, I end it up working in a factroy for 11 hours.. People go to the gym for 1 or two hours but I was lifting weights for 11 hours and with two master degrees :).  
+
+<i class="fa-solid fa-chess-knight"></i>
+<i class="fa-solid fa-brain"></i>
+<i class="fa-solid fa-user-injured"></i>
+<i class="fa-solid fa-book-open"></i>
+<i class="fa-solid fa-file-pen"></i>
+<i class="fa-brands fa-leanpub"></i>
+<i class="fa-solid fa-gear"></i>
+<i class="fa-solid fa-graduation-cap"></i>
+
+
+<template>
+		<div class="about-container">
+			<!-- <div class="main-heading">
+				<h2>About me</h2>
+			</div> -->
+			<div class="content">
+				<div class="about-content myGconainer">
+					<div class="nav-menu">
+						<section>
+							<div class="tool">
+								<i class="fa-solid fa-screwdriver-wrench"></i>
+							</div>
+							<span>Skills</span>
+						</section>						
+						<section>
+							<div class="tool">
+								<i class="fa-solid fa-brain"></i>
+							</div>
+							<span>Mindset</span>
+						</section>
+						<section>
+							<div class="tool">
+								<i class="fa-brands fa-leanpub"></i>
+							</div>
+							<span>Learning Journey</span>
+						</section>
+
+					</div>
+					<div class="item-content">
+
+					</div>
+				</div>
+			</div>
+		</div>
+</template>
+<style scoped lang="sass">
+@use '@/assets/global.sass' as *
+.about-container
+	background: $bgclr1
+	width: 100%
+	min-height: 100vh
+	// .main-heading
+	// 	text-align: center
+	// 	h2
+	// 		padding: 30px 0 20px
+	// 		@include fontoo(40px, bold, $wclr)
+	// 		text-transform: capitalize
+	// 		letter-spacing: 1px
+	.about-content
+		@include flexoo(row, nowrap, center, center)
+		.nav-menu
+			@include flexoo(row, nowrap, center, center)
+			gap: 30px
+			padding: 35px
+			transition: 0.5s
+			&:hover
+				gap: 35px
+				scale: 1.05
+				// margin-top: 20px
+			section
+				// background-color: $rclr
+				position: relative
+				transition: $mtrans
+				&:hover
+					transform: translateY(10px)
+				.tool
+					background-color: $rclr
+					border-radius: 50%
+					cursor: pointer
+					i
+						font-size: 30px
+						padding: 15px
+						display: block
+				span
+					position: absolute
+					background-color: black
+					color: white
+					padding: 10px 20px
+					transition: $mtrans
+					display: none
+					&::before
+						content: ''
+						position: absolute
+						width: 15px
+						height: 15px
+
+		.item-content
+</style>
+
+	// let slideImages = document.querySelectorAll('.image')
+	// // let next = document.querySelector('.next')
+	// // let prev = document.querySelector('.prev')
+	// let dots = document.querySelectorAll('.dot')
+
+	// function autoSliding(){
+
+		// myInterval = setInterval(timer, 2000)
+		// function timer (){
+		// 	slideNext()
+		// 	indicators()
+		// }
+		// autoSliding();
+	// }
+	// const container = document.querySelector('.slide-container')
+	// container.addEventListener('mouseover', function(){
+	// 	clearInterval(myInterval)
+	// })
+	// container.addEventListener('mouseout', function(){
+	// 	setInterval(myInterval)
+	// })
+	// function indicators(){
+	// 	for(i=0;i<dots.length;i++){
+	// 		dots[i].classname= dots[i].className.replace('Active', '');
+	// 	}
+	// 	dots[counter].className += 'active';
+	// }
+
+
+	<script setup>
+import { onMounted, onUnmounted } from 'vue';
+	//props
+	const {project} = defineProps({
+		project:{type: Object, required: true}
+	})
+	
+</script>
+
+
+<template>
+	<div class="sliderContainer">
+		<div class="slides" 
+			@mouseover="clearAutoSlide" 
+			@mouseout="restartAutoSlide"
+		>
+			<img 
+			v-for="photo in project.gallery" 
+			:src="`/images/${photo.title}`"
+			:key="photo.id"
+			:alt="photo.title" 
+			class="image"
+			>
+		</div>
+		<div class="btns">
+			<span class="next" @click="goToNextImg">&#10095;</span>
+			<span class="prev" @click="goToPreviousImg">&#10094;</span>
+		</div>
+		<div class="dotsContainer">
+			<div
+			class="dot" 
+			v-for="photo in project.gallery" 
+			:key="photo.id" 
+			:class="{ active: (photo.id === index) }"
+			@click="index = photo.id"
+			></div>
+		</div>
+	</div>
+</template>
+<script>
+//slider functionality and btns
+let index = 0
+	let slidingImages = document.querySelectorAll('.image')
+	function goToNextImg(){
+		slidingImages[index].style.animation = 'next1 0.5s ease-in forwards'
+		if(index >= project.gallery.length-1){
+			index = 0
+		} else {
+			index++
+		}
+		slidingImages[index].style.animation = 'next2 0.5s ease-in forwards'
+	}
+	function goToPreviousImg(){
+		slidingImages[index].style.animation = 'prev1 0.5s ease-in forwards'
+		if(index == 0){
+			index = project.gallery.length-1
+		} else {
+			index--
+		}
+		slidingImages[index].style.animation = 'prev2 0.5s ease-in forwards'
+	}
+	//autosliding and mouse effect
+	const mySlidingInterval = setInterval(goToNextImg, 2000)
+	function clearAutoSlide() {
+  clearInterval(mySlidingInterval);
+	}
+	function restartAutoSlide() {
+		mySlidingInterval = setInterval(goToNextImg, 2000);
+	}
+	onMounted(() => {
+		restartAutoSlide();
+	});
+	onUnmounted(() => {
+		clearInterval(mySlidingInterval);
+	});
+</script>
+<style scoped lang="sass">
+@use '@/assets/global.sass' as *
+
+.sliderContainer
+	position: relative
+	width: 720px
+	//width: 100%
+	height: 400px
+	margin-bottom: 60px
+	.slides
+		width: 100%
+		height: calc( 100% - 30px )
+		position: relative
+		overflow: hidden
+		.image
+			width: 100%
+			height: 100%
+			position: absolute
+			object-fit: cover
+			top: 0
+			left: -100%
+			&.active
+				left: 0
+	.btns
+		span
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			width: 150px
+			height: 370px
+			@include fontoo(24px, bold, #eee)
+			@include flexoo(row, nowrap, center, center)
+			transition: 0.5s
+			user-select: none
+			cursor: pointer
+			z-index: 1
+			&.next
+				right: 0
+			&.prev
+				left: 0
+	.dotsContainer
+		position: absolute
+		bottom: 5px
+		z-index: 3
+		left: 50%
+		transform: translateX(-50%)
+		.dot
+			width: 15px
+			height: 15px
+			margin: 0px 5px
+			// border: 3px solid #bbb
+			border-radius: 50%
+			display: inline-block
+			transition: background-color 0.6s ease
+			background-color: rgb(36, 52 , 95)
+			&.active
+				background-color: $rclr
+
+@keyframes next1
+	from 
+		left: 0
+	to
+		left: -100%
+@keyframes next2
+	from 
+		left: 100%
+	to
+		left: 0%
+@keyframes prev1
+	from 
+		left: 0
+	to
+		left: 100%
+@keyframes prev2
+	from 
+		left: -100%
+	to
+		left: 0%
+</style>
+
+.next-enter-active,
+.next-leave-active
+	transition: 0.5s ease-in forwards
+.next-enter-from
+	left: 100%
+.next-enter-to,
+.next-leave-from
+	left: 0
+.next-leave-to
+	left: -100%
+
+.prev-enter-active,
+.prev-leave-active
+	transition: 0.5s ease-in forwards
+.prev-enter-from
+	left: -100%
+.prev-enter-to,
+.prev-leave-from
+	left: 0
+.prev-leave-to
+	left: 100%
+	<script>
+//slider functionality and btns
+let index;
+let slidingImages;
+let mySlidingInterval;
+onMounted(() => {
+	index = 0
+	slidingImages = document.querySelectorAll('.image')
+		restartAutoSlide();
+	});
+	function goToNextImg() {
+  if (slidingImages && index >= 0 && index < project.gallery.length) {
+    slidingImages[index].style.animation = 'next1 0.5s ease-in forwards';
+    if (index >= project.gallery.length - 1) {
+      index = 0;
+    } else {
+      index++;
+    }
+    slidingImages[index].style.animation = 'next2 0.5s ease-in forwards';
+  }
+}
+
+function goToPreviousImg() {
+  if (slidingImages && index >= 0 && index < project.gallery.length) {
+    slidingImages[index].style.animation = 'prev1 0.5s ease-in forwards';
+    if (index === 0) {
+      index = project.gallery.length - 1;
+    } else {
+      index--;
+    }
+    slidingImages[index].style.animation = 'prev2 0.5s ease-in forwards';
+  }
+}
+	//autosliding and mouse effect
+	mySlidingInterval = setInterval(goToNextImg, 2000)
+	function clearAutoSlide() {
+  clearInterval(mySlidingInterval);
+	}
+	function restartAutoSlide() {
+		mySlidingInterval = setInterval(goToNextImg, 2000);
+	}
+
+	onUnmounted(() => {
+		clearInterval(mySlidingInterval);
+	});
+</script>
+
+
+			"gallery": [
+				{"id": 1, "title": "cat-01.jpg"},
+				{"id": 2, "title": "cat-02.jpg"},
+				{"id": 3, "title": "cat-03.jpg"},
+				{"id": 4, "title": "cat-04.jpg"},
+				{"id": 5, "title": "cat-05.jpg"},
+				{"id": 6, "title": "cat-06.jpg"}
+			]
+
+
+<script setup>
+	import { onMounted, onUnmounted, ref, computed } from 'vue';
+// Props
+	const { project } = defineProps({project: { type: Object, required: true }})
+// Declare currentIndex and slidingImages 
+	let currentIndex = 0;
+	const currentImage = computed(()=> project.gallery[currentIndex])
+	let mySlidingInterval
+// Slider functionality and btns
+	function goToNextImg() {
+		if (currentIndex >= project.gallery.length - 1) {
+			currentIndex = 0;
+		} else {
+			currentIndex++;
+		}
+		console.log(currentIndex)
+	}
+	function goToPreviousImg() {
+		if (currentIndex === 0) {
+			currentIndex = project.gallery.length - 1;
+		} else {
+			currentIndex--;
+		}
+		console.log(currentIndex)
+	}
+// Autosliding and mouse effect
+	function restartAutoSlide() {mySlidingInterval = setInterval(goToNextImg, 3000)}
+	onMounted(() => {restartAutoSlide()})
+	function clearAutoSlide() {clearInterval(mySlidingInterval)}
+	// onUnmounted(() => {clearInterval(mySlidingInterval)})
+</script>
