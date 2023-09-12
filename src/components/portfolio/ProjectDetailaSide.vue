@@ -32,10 +32,10 @@
 .source
 	background: $aSide
 	padding: 16px
-	margin-bottom: 10px
+	margin-bottom: 25px
 	h3
-		@include fontoo(20px, 500, $wclr)
-		padding-bottom: 10px
+		@include fontoo(22px, 500, $wclr)
+		padding-bottom: 20px
 	.tech
 		@include flexoo(row, wrap, center,center)
 		gap: 10px

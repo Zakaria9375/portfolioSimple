@@ -81,12 +81,11 @@ export default {
 
 .sliderContainer
 	position: relative
-	width: 720px
 	width: 100%
-	height: 400px
-	margin-bottom: 60px
+	aspect-ratio: 1.7
 	.slides
 		width: 100%
+		aspect-ratio: 1.8
 		height: calc( 100% - 40px )
 		position: relative
 
@@ -126,6 +125,7 @@ export default {
 		bottom: 5px
 		z-index: 2
 		left: 50%
+		width: fit-content
 		transform: translateX(-50%)
 		.dot
 			width: 15px

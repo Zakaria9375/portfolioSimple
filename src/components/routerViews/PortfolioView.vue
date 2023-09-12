@@ -2,6 +2,8 @@
 	import sourceData from "@/myData.json"
 	import { reactive } from "vue";
 	import ProjectCard from "@/components/portfolio/ProjectCard.vue";
+	import { storeGetters } from '@/store/store.js'
+	const specialContainer = storeGetters.specialContainer
 	const projects = reactive(sourceData.projects);
 </script>
 
@@ -9,11 +11,11 @@
 	<div class="portfolio-background">
 		<div class="portfolio-container">
 			<div class="main-heading">
-				<h2>Web developer portfolio</h2>
-				<p>And this is just <span>a start</span></p>
+				<h2>My projects</h2>
+				<p>let my work do the talking. However, this is just <span>a start</span></p>
 			</div>
 			<div class="content">
-				<div class="projects-container myGcontainer">
+				<div class="projects-container" :class="specialContainer">
 					<router-link
 						v-for="project in projects"
 						:key="project.id"
@@ -44,9 +46,12 @@
 				letter-spacing: 1px
 			p
 				padding: 15px 0 25px
+				@include fontoo(1.2rem, 400, $wclr)
+				opacity: 0.8
 				> span
-					@include fontoo(20px, 400, rgb(250 146 100))
+					@include fontoo(1.25rem, 500, rgb(250 146 100))
 					font-style: italic
+					padding-left: 5px
 		.content
 			min-height: calc( 100vh - 140px)
 			width: 100%

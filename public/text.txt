@@ -427,3 +427,102 @@ function goToPreviousImg() {
 	function clearAutoSlide() {clearInterval(mySlidingInterval)}
 	// onUnmounted(() => {clearInterval(mySlidingInterval)})
 </script>
+
+
+
+<template>
+  <div class="profile">
+    <!-- Canvas element to render particles -->
+    <canvas ref="myCanvas"></canvas>
+  </div>
+</template>
+
+<script>
+import { ref, onMounted, onUnmounted } from "vue";
+
+export default {
+  setup() {
+    const myCanvas = ref(null);
+    let animationFrameId; // Variable to store the animation frame ID
+
+    // Function to initialize the canvas and start animation
+    const initializeCanvas = () => {
+      const canvas = myCanvas.value;
+      const context = canvas.getContext("2d");
+      const particles = []; // Array to store particle objects
+      const numParticles = 100; // Number of particles
+      const disturbance = 20; // Disturbance factor on hover
+
+      // Generate random particles
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: Math.random() * 2 - 1, // Random horizontal velocity between -1 and 1
+          vy: Math.random() * 2 - 1, // Random vertical velocity between -1 and 1
+        });
+      }
+
+      // Animation function
+      const animate = () => {
+        context.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+        // Loop through particles and update their position
+        for (const particle of particles) {
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+
+          // Wrap particles around the canvas
+          if (particle.x < 0) particle.x = canvas.width;
+          if (particle.x > canvas.width) particle.x = 0;
+          if (particle.y < 0) particle.y = canvas.height;
+          if (particle.y > canvas.height) particle.y = 0;
+
+          // Draw particles as small squares
+          context.fillStyle = "white";
+          context.fillRect(particle.x, particle.y, 2, 2);
+        }
+
+        // Request the next animation frame
+        animationFrameId = requestAnimationFrame(animate);
+      };
+
+      // Event listener for hover effect
+      canvas.addEventListener("mouseover", () => {
+        // Disturb particles on hover by modifying their velocity
+        for (const particle of particles) {
+          particle.vx += (Math.random() - 0.5) * disturbance;
+          particle.vy += (Math.random() - 0.5) * disturbance;
+        }
+      });
+
+      // Start the animation loop
+      animate();
+    };
+
+    // Call the initializeCanvas function when the component is mounted
+    onMounted(() => {
+      initializeCanvas();
+    });
+
+    // Cleanup the animation frame when the component is unmounted
+    onUnmounted(() => {
+      cancelAnimationFrame(animationFrameId);
+    });
+
+    return {
+      myCanvas,
+    };
+  },
+};
+</script>
+
+<style lang="sass" scoped>
+@use "@/assets/global.sass" as *
+
+.profile
+  padding: 16px
+  text-align: center
+  position: relative
+  canvas
+</style>

@@ -1,6 +1,10 @@
+<script setup>
+import { storeGetters } from '@/store/store.js'
+const specialContainer = storeGetters.specialContainer
+</script>
 <template>
-	<div class="contact-background">
-		<div class="contact-container myGcontainer">
+	<div class="contact">
+		<div :class="specialContainer">
 		<div class="main-heading">
 			<h2>Contact me</h2>
 			<p>Thank you for visiting my portfolio. Your ideas and inquiries are important to me. Feel free to reach me out using the contact form below, or through email or phone. </p>
@@ -11,19 +15,21 @@
 					<span class="by-phone">+371 28012310</span>
 					
 					<h4>Send a message</h4>
+					<div class="by">
 					<a href="mailto:alizakaria9375@email.com">
 						by <span>Email</span>
 					</a>
 					<a href="http://www.linkedin.com/in/zakaria-ali-java/" target="_blank" rel="noopener noreferrer">
 						by <span>Linkedin</span>
-					</a>				
+					</a>	
+					</div>			
 				</div>
 				<div class="form">
 					<form action="submit">
 						<input type="text" name="name" class="form-input" placeholder="ENTER YOUR NAME">
 						<input type="text" name="mail" class="form-input" placeholder="ENTER YOUR EMAIL">
 						<textarea name="message" class="form-input" placeholder="ENTER YOUR MESSAGE"></textarea>
-						<input type="submit" value="send message" >
+						<button type="submit"><span>send message</span></button>
 					</form>
 				</div>
 
@@ -34,75 +40,111 @@
 <style scoped lang="sass">
 @use '@/assets/global.sass' as * 
 
-.contact-background 
-	background-color: $bgclr1
-	width: 100%
-	height: 100%
-	@include flexoo(row, nowrap, center, center)
-	min-height: 100vh
-	.contact-container
-		margin-bottom: 10px
-		margin-top: 10px 
-		.main-heading
-			text-align: center
-			h2
-				@include fontoo(42px, 800, $wclr)
-				margin-bottom: 30px
-				text-transform: uppercase
-				letter-spacing: 2px
-			p
-				@include fontoo(20px, 400, $wclr)
-				line-height: 1.8
-				max-width: 798px
-				margin: 0 auto 40px
-		.content
-			@include flexoo(row, wrap, space-evenly, flex-start)
-			.form
-				flex-basis: 65%
-				.form-input
-					padding: 20px
-					display: block
-					border: 1px solid #ccc
-					border-radius: 10px
-					margin-bottom: 40px
-					width: 100%
-					background-color: rgb(28, 40, 73)
-					@include fontoo(16px, normal, $wclr)
-					&:focus
-						border-color: $rclr
-				textarea.form-input
-					height: 200px
-					resize: none
-				input[type="submit"]
-					color: $wclr
-					background-color: $rclr
-					padding: 20px
-					border: none
-					display: flex
-					margin-left: auto
-					text-transform: uppercase
-					cursor: pointer
-					&:hover
-						scale: 1.1
-			.info
-				flex-basis: 25%
-				h4
-					@include fontoo(22px, 600, $wclr)
-					text-transform: uppercase
-					margin-bottom: 40px
-					&:nth-of-type(2)
-						margin-top: 100px
-				> span
-					display: block
-					@include fontoo(18px, normal, $wclr)
-					margin-bottom: 10px
-					letter-spacing: 1px
-				a
-					display: block
-					@include fontoo(18px, normal, $wclr)
-					span
-						display: inline-block
-						@include fontoo(22px, normal, $rclr)
-						font-style: italic
+.contact 
+	padding-top: 30px
+	padding-bottom: 30px
+	margin-bottom: auto
+	margin-top: auto 
+	.main-heading
+		text-align: center
+		h2
+			@include fontoo(42px, 800, $wclr)
+			margin-bottom: 30px
+			opacity: 0.8
+			text-transform: uppercase
+			letter-spacing: 2px
+		p
+			@include fontoo(20px, 400, $wclr)
+			line-height: 1.8
+			max-width: 798px
+			margin: 0 auto 30px
+.content
+	@include more($smS)
+		@include flexoo(row, wrap, space-evenly, flex-start)
 
+	@include less($smS)
+		@include flexoo(column-reverse, nowrap, center, center)
+.form
+	flex-basis: 65%
+	@include less($smS)
+		width: 100%
+		padding: 20px
+	.form-input
+		padding: 20px
+		display: block
+		border: 1px solid #ccc
+		border-radius: 10px
+		margin-bottom: 30px
+		width: 100%
+		min-width: 270px
+		background-color: rgb(28, 40, 73)
+		@include fontoo(16px, normal, $wclr)
+		&:focus
+			border-color: $rclr
+	textarea.form-input
+		height: 200px
+		resize: none
+	button[type="submit"]
+		color: $wclr
+		background-color: transparent
+		border: 2px solid $rclr
+		padding: 25px
+		display: flex
+		position: relative
+		margin-left: auto
+		text-transform: uppercase
+		cursor: pointer
+		&::after
+			content: ""
+			position: absolute
+			transform-origin: 100% 100% 
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+			transform: scale(0)
+			transition: transform 0.3s ease
+			background-color: $rclr
+		&:hover::after
+			transform: scale(1)
+		span
+			z-index: 1
+
+.info
+	flex-basis: 25%
+	@include less($smS)
+		width: 100%
+		padding: 20px
+		
+	@include more($smS)
+		padding: 10px 20px 30px 0 
+	h4
+		text-transform: uppercase
+		@include fontoo(22px, 600, $wclr)
+		@include more($smS)
+			margin-bottom: 40px
+			@include more($smS)
+			&:nth-of-type(2)
+				margin-top: 100px
+		@include less($smS)
+			margin: 30px 0
+	> span
+		@include fontoo(18px, normal, $wclr)
+		letter-spacing: 1px
+		display: block
+		@include less($smS)
+			text-align: center
+	a
+		display: block
+		padding-bottom: 10px
+		@include fontoo(18px, normal, $wclr)
+
+		span
+			display: inline-block
+			@include fontoo(22px, normal, $rclr)
+			font-style: italic
+			
+.by
+	@include less($smS)
+		@include flexoo(row, wrap, space-evenly, flex-start)
 </style>

@@ -45,8 +45,8 @@ header
 	position: fixed
 	top: 0
 	left: 0
+	z-index: 3
 	bottom: 0
-	z-index: 999
 	transition: $ctrans
 
 	nav
@@ -68,6 +68,8 @@ header
 				border-radius: 50%
 				cursor: pointer
 				z-index: 103
+				@include less(500px)
+					display: none
 				@include flexoo(row, nowrap, center, center)
 				i
 					@include fontoo(28px, bold, white)
@@ -82,6 +84,9 @@ header
 				left: -8px
 				animation: pulsate 7.5s ease-out infinite
 				z-index: 101
+				@include less(500px)
+					display: none
+
 .rotate
 	transform: rotate(180deg)
 @keyframes pulsate

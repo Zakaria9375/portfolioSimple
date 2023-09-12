@@ -8,31 +8,31 @@ $bclr: #0e1335
 $rclr: rgb(226, 120, 108)
 //******************************
 //background colors contact
-$bgclr1: #16203A
+$bgclr1: rgb(22, 32, 58)
 // unused colors 
-$clr1: #2196f3
-$clr2: #567f9f
+$clr1: rgb(33, 150, 243)
+$clr2: rgb(86, 127, 159)
 //linear gradient colors
 $lgPORTO: linear-gradient(45deg, rgb(36, 52, 95) 0%, rgb(32, 46, 84) 100%)
 $lgHEAD: linear-gradient(45deg, rgb(22, 32, 58) 0%, rgb(32, 46, 84) 100%)
 $aSide: linear-gradient(45deg, rgb(36, 52, 95) 0%, rgb(28, 40, 73) 100%)
+$about: linear-gradient(45deg, rgb(28, 40, 73) 0%, rgb(36, 52, 95) 100%)
 //collapsed transition for the header
 $ctrans: 0.5s
 $mtrans: 0.3s
 
-$smS: 768px
-$mS: 992px
-$lS: 1200px
-$xl: 1400px
+
 
 // box shadow
 $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
-// @mixin lessThan($size)
-//   @media (max-width: $size)
-//     @content
-// @mixin moreThan($size)
-//   @media (min-width: $size)
-//     @content
+
+@mixin less($size)
+  @media (max-width: $size)
+    @content
+
+@mixin more( $size)
+  @media (min-width: $size)
+    @content
 
 @mixin flexoo($d, $w, $h, $v)
   display: flex
@@ -40,11 +40,6 @@ $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
   flex-wrap: $w
   justify-content: $h
   align-items: $v
-
-// @mixin gridoo($min, $max, $gap)
-//   display: grid
-//   grid-template-columns: repeat(auto-fill, minmax($min, $max))
-//   grid-gap: $gap
 
 @mixin absoo($w, $h ,$t ,$l)
   position: absolute
@@ -58,12 +53,16 @@ $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
   font-weight: $weight
   color: $color
 
+$smS: 768.5px
+$mS: 992px
+$lS: 1200px
+$xlS: 1400px
 @mixin sbp($point)
   @if $point == smS
-    @media (max-width: 768px)
+    @media (max-width: 768.5px)
       @content
   @else if $point == mS
-    @media (min-width: 768px) and (max-width: 992px)
+    @media (min-width: 768.5px) and (max-width: 992px)
       @content
   @else if $point == lS
     @media (min-width: 992px) and (max-width: 1200px)
@@ -71,7 +70,9 @@ $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
   @else if $point == xlS
     @media (min-width: 1200px)
       @content
-
+  @else if $point == xxlS
+    @media (min-width: 1480px)
+      @content
 .myGcontainer
   padding-left: 50px
   padding-right: 50px
@@ -80,29 +81,42 @@ $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
   @include sbp(smS)
     width: 100%
   @include sbp(mS)
-    width: 750px
+    width: clamp(530px,675px,750px)
   @include sbp(lS)
-    width: 970px
+    width: clamp( 675px ,895px ,970px)
   @include sbp(xlS)
-    width: 1170px
+    width: clamp( 950px ,1090px ,1170px)
 
-// .myGcontainer
-//   padding-left: 15px
-//   padding-right: 15px
-//   margin-left: auto
-//   margin-right: auto
-//   @include sbp(smS)
-//     width: 100%
-//   @include sbp(mS)
-//     width: 750px
-//   @include sbp(lS)
-//     width: 970px
-//   @include sbp(xlS)
-//     width: 1170px
-
-
-
-
+.myLConatiner
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+  @include sbp(smS)
+    width: 100%
+  @include sbp(mS)
+    width: 675px
+  @include sbp(lS)
+    width: 920px
+  @include sbp(xlS)
+    width: 1090px
+  @include sbp(xxlS)
+    width: 1270px
+.mySConatiner
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+  @include sbp(smS)
+    width: 100%
+  @include sbp(mS)
+    width: 530px
+  @include sbp(lS)
+    width: 700px
+  @include sbp(xlS)
+    width: 950px
+  @include sbp(xxlS)
+    width: 1130px
 @mixin show($t1, $d1, $t2, $d2, $ws)
   .diplayNone-enter-active
     transition: opacity $t1 $d1 ease, max-width $t2 $d2 ease
@@ -112,22 +126,6 @@ $bxShadow: 0 10px 15px -3px rgba(0,0,0,0.7)
   .diplayNone-enter-to
     opacity: 1
     max-width: $ws
-
-// .upDown-enter-active
-// 	transition: transform 0.5s ease, scale 0.3s ease 0.5s
-// .upDown-leave-active
-// 	transition: scale 0.3s ease, transform 0.5s ease 0.3s
-
-// .upDown-enter-from
-// 	transform: translateY(-100%) 
-// 	scale: 0.7
-// .upDown-enter-to,
-// .upDown-leave-from
-// 	transform: translateY(0) 
-// 	scale: 1
-// .upDown-leave-to
-// 	transform: translateY(100%) 
-// 	scale: 0.7
 
 @keyframes bouncingBtnRight
   0%, 10%, 50%, 80%, 100%

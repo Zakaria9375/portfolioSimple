@@ -3,20 +3,14 @@
 		<div class="porto">
 			<router-link :to="{ name: 'portfolio' }">
 				<button>
-					<span class="all">
-						<span class="logo"><i class="fa-solid fa-briefcase"></i></span>
-						<span class="title">My portfolio</span>
-					</span>
+					<span class="title">My portfolio</span>
 				</button>
 			</router-link>
 		</div>
 		<div class="contact">
 			<router-link :to="{ name: 'contact' }">
 				<button>
-					<span class="all">
-						<span class="logo"><i class="fa-regular fa-envelope"></i></span>
-						<span class="title">Get in touch</span>
-					</span>
+					<span >Get in touch</span>
 				</button>
 			</router-link>
 		</div>
@@ -36,7 +30,6 @@
 	.porto,
 	.contact
 		padding: 8px
-
 		a
 			cursor: pointer
 			button
@@ -45,23 +38,27 @@
 				color: white
 				width: 210px
 				height: 75px
+				position: relative
+				transition: 0.3s ease
 				cursor: pointer
-				span.all
+				&::after
+					content: ""
+					position: absolute
+					transform-origin: 100% 100% 
+					width: 100%
+					height: 100%
+					left: 0
+					top: 0
+					transform: scale(0)
+					transition: transform 0.3s ease
+					background-color: $rclr
+				&:hover::after
+					transform: scale(1)
+				span
 					@include fontoo(22px, 600, $wclr)
-					text-align: center
-					padding: 10px
-					span.logo
-						display: none
-						transition: $mtrans
-					span.title
-						padding-left: 10px
-		&:hover
-			button
-				background-color: $rclr
-				span.all
-					span.logo
-						display: inline-block
-					span.title
+					@include flexoo(row, nowrap, center, center)
+					@include absoo(100%, 100%, 0, 0)
+					z-index: 1
 	.about
 		p
 			@include fontoo(20px, normal, $wclr)

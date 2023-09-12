@@ -1,36 +1,38 @@
 <script setup>
 	import sourceData from "@/myData.json"
-	import { store } from "@/store/store.js";
 </script>
-
 <template>
-  <div class="main-links">
-    <ul>
+	<div class="smallHeader">
+		<ul>
       <li v-for="link in sourceData.MainLinks">
         <RouterLink
 				:key="link.id"
 				:to="link.url"
         >
 					<i :class="link.iclass"></i>
-					<transition name="diplayNone">
-          <span v-show="!store.collapsed">{{link.name}}</span>
-					</transition>
         </RouterLink>
       </li>
     </ul>
-  </div>
+	</div>
 </template>
-
-<style lang="sass" scoped>
+<style lang="sass">
 @use '@/assets/global.sass' as * 
-@include show(0.5s, 0.2s, 0.5s, 0.2s, 101px)
-.main-links
+.smallHeader
+	background: $lgHEAD
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 20px
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 3
+	right: 0
+	transition: $ctrans
+	@include flexoo(row, nowrap, center, center)
 	ul
+		@include flexoo(row, nowrap, space-between, center)
 		padding: 10px
-		min-height: 260px
-		@include flexoo(column, nowrap, space-between, center)
+		width: 70%
 		li
-			width: 100%
+			width: fit-content
 			a
 				border-radius: 10px
 				@include flexoo(row, nowrap, space-between, center)
@@ -42,8 +44,7 @@
 					@include fontoo(20px, 500, white)
 					padding: 10px
 					overflow: hidden
-.main-links
-	ul
+
 		li a.active,
 		li:hover a
 			cursor: pointer

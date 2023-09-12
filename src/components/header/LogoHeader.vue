@@ -25,6 +25,7 @@
 	
 	.zname
 		transition: $mtrans
+		
 		span.z
 			display: inline-block
 			padding: 5px
@@ -38,7 +39,7 @@
 		span.name
 			letter-spacing: 2px
 			display: inline-block
-			max-height: 61px
+			max-height: 59px
 			padding-top: 35px
 			overflow: hidden
 			@include fontoo(24px, bold, $wclr)

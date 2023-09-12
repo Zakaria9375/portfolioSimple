@@ -1,5 +1,10 @@
+<script setup>
+import { storeGetters } from '@/store/store.js'
+const specialContainer = storeGetters.specialContainer
+</script>
 <template>
-	<div class="notFound myGcontainer">
+	<div class="notFound"
+	:class="specialContainer">
 		<h1>Not Found</h1>
 		<p><span>Ops!! </span> We could not find the page that you are looking for, go back</p>
 		<router-link to="/"><span class="home">home</span></router-link>

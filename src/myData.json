@@ -53,6 +53,30 @@
 			"description": {},
 			"top": true,
 			"active": true
+		},
+		{
+			"id": 5,
+			"title": "Main",
+			"about" : "Web template",
+			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"repos": [
+				{"title": "Github", "link": ""},
+				{"title": "Docker", "link": ""}, 
+				{"title": "Live", "link": ""}
+			],
+			"photo": "shuffle-02.jpg",
+			"gallery": [
+				"cat-01.jpg",
+				"cat-02.jpg",
+				"cat-03.jpg",
+				"cat-04.jpg",
+				"cat-05.jpg",
+				"cat-06.jpg"
+			],
+			"description": "Solar Massasje is a Norwegian professional maseur marketing website. The site runs on WordPress CMS and utilizes modern design with good user experience.",
+			"top": true,
+			"active": true
+		
 		}
 	],
 	"MainLinks": [

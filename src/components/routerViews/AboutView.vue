@@ -1,33 +1,21 @@
 <script setup>
 	import AboutStory from '../about/AboutStory.vue';
 	import AboutSkills from '../about/AboutSkills.vue';
+	import { storeGetters } from '@/store/store.js'
+	const specialContainer = storeGetters.specialContainer
 </script>
 <template>
-	<div class="about-container">
-		<div class="main-heading">
-			<h2>About me</h2>
-		</div>
-		<div class="about-content myGconainer">
-			<AboutStory/>
-			<AboutSkills/>
-		</div>
+	<div class="about-container" :class="specialContainer">
+		<AboutStory/>
+		<AboutSkills/>
 	</div>
 </template>
 
 <style scoped lang="sass">
 @use '@/assets/global.sass' as *
 .about-container
-	background: $bgclr1
-	width: 100%
-	min-height: 100vh
-	.main-heading
-		text-align: center
-		transition: $mtrans
-		h2
-			padding: 30px 0 10px
-			@include fontoo(40px, bold, $wclr)
-			text-transform: capitalize
-			letter-spacing: 1px
+	margin-top: 30px
+	margin-bottom: 30px
 	.about-content
 		@include flexoo(column, nowrap, center, center)
 </style>
