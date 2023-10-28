@@ -7,8 +7,7 @@
 			"techs": ["HTML", "CSS", "Javascript","Vue"],
 			"photo": "webdev.webp",
 			"repos": [
-				{"title": "Github", "link": ""},
-				{"title": "Live", "link": ""}
+				{"title": "Github", "link": ""}
 			],
 			"gallery": [
 				"p1.png",

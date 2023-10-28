@@ -2,7 +2,7 @@
 	//imports
 	import { reactive, computed } from 'vue';
 	import { useRoute, useRouter } from 'vue-router';
-	import sourceData from 'myData.json'
+	import sourceData from '@/myData.json'
 	import ProjectDetailaSide from './ProjectDetailaSide.vue';
 	import ProjectGallery from './ProjectGallery.vue';
 	import { storeGetters } from '@/store/store.js'
