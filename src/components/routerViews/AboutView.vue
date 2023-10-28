@@ -16,6 +16,6 @@
 .about-container
 	margin-top: 30px
 	margin-bottom: 30px
-	.about-content
-		@include flexoo(column, nowrap, center, center)
+	@include flexoo(column, nowrap, center, center)
+
 </style>

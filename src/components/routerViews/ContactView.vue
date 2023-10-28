@@ -1,6 +1,23 @@
 <script setup>
 import { storeGetters } from '@/store/store.js'
+import { ref } from 'vue'
 const specialContainer = storeGetters.specialContainer
+const submitted = ref(false)
+function handleSubmit() {
+	submitted.value = true
+	Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "alizakaria9375@gmail.com",
+    Password : "password",
+    To : 'alizakaria9375@gmail.com',
+    From : document.getElementById('email').value,
+    Subject : "Portfolio Message",
+    Body : "Name: " + document.getElementById('name').value
+			+"<br> Message: " + document.getElementById('message').value
+	}).then(
+		message => console.log("message sent successfully")
+	);
+}
 </script>
 <template>
 	<div class="contact">
@@ -24,15 +41,20 @@ const specialContainer = storeGetters.specialContainer
 					</a>	
 					</div>			
 				</div>
-				<div class="form">
-					<form action="submit">
-						<input type="text" name="name" class="form-input" placeholder="ENTER YOUR NAME">
-						<input type="text" name="mail" class="form-input" placeholder="ENTER YOUR EMAIL">
-						<textarea name="message" class="form-input" placeholder="ENTER YOUR MESSAGE"></textarea>
+				<div class="form" v-if="!submitted">
+					<form @submit.prevent="handleSubmit" method="POST">
+						<input type="text" name="name" id="name" class="form-input" placeholder="ENTER YOUR NAME" required>
+						<input type="text" name="email" id="email" class="form-input" placeholder="ENTER YOUR EMAIL" required>
+						<textarea name="message" id="message" class="form-input" placeholder="ENTER YOUR MESSAGE" required></textarea>
 						<button type="submit"><span>send message</span></button>
 					</form>
 				</div>
-
+				<div class="form" v-if="submitted">
+					<div class="thanks">
+						<h2>Your message has been recieved</h2>
+						<h2>Thank you</h2>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -69,6 +91,13 @@ const specialContainer = storeGetters.specialContainer
 	@include less($smS)
 		width: 100%
 		padding: 20px
+	.thanks
+		margin-top: 16px
+		margin-bottom: 16px
+		text-align: center
+		h2 
+			padding: 16px
+			@include fontoo(24px, normal, $gclr)
 	.form-input
 		padding: 20px
 		display: block

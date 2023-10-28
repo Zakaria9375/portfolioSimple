@@ -1,5 +1,5 @@
 <script setup>
-	import sourceData from "@/myData.json";
+	import sourceData from "myData.json";
 	import { reactive } from "vue";
 	const skills = reactive(sourceData.Skills);
 </script>

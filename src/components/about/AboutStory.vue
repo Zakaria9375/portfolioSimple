@@ -2,7 +2,7 @@
 	<div class="story" >
 		<div class="me">
 			<h4>About me</h4>
-			<p>I'm Zakaria, but you can call me Zica. Originally from Egypt. I'm more of a traveler than a stationary soul. Currently, residing in Riga, Latvia.
+			<p>I'm Zakaria, but you can call me Zica. Originally from Egypt. I'm more of a traveler than a stationary soul. Currently, residing in Riga, Latvia, pursuing my master degree in Computer Science.
 			</p>
 			<h4>personal skills</h4>
 			<div class="ps">
@@ -14,13 +14,14 @@
 			</div>
 		</div>
 		<div class="photo">
-			<img src="/images/cat-05.jpg" alt="">
+			<img src="/images/zico.jpg" alt="">
 		</div>
 	</div>
 </template>
 <style lang="sass" scoped>
 @use '@/assets/global.sass' as *
 .story
+	max-width: 1060px
 	@include more($smS)
 		@include flexoo(row, wrap, space-between,center)
 	@include less($smS)
@@ -56,6 +57,7 @@
 	.photo
 		@include more($smS)
 			flex-basis: 35%
+			max-width: 350px
 		@include less($smS)
 			width: min(400px, 100%)
 		img

@@ -2,11 +2,22 @@
 	"projects" : [
 		{
 			"id": 1,
-			"title": "Kasper2",
-			"about" : "Web template",
-			"techs": ["HTML", "CSS", "Javascript","Vue", "CSS", "Javascript"],
-			"photo": "shuffle-02.jpg",
-			"description": {},
+			"title": "My Portfolio",
+			"about" : "SPA by Vue.js",
+			"techs": ["HTML", "CSS", "Javascript","Vue"],
+			"photo": "webdev.webp",
+			"repos": [
+				{"title": "Github", "link": ""},
+				{"title": "Live", "link": ""}
+			],
+			"gallery": [
+				"p1.png",
+				"p2.png",
+				"p3.png",
+				"p4.png",
+				"p5.png"
+			],
+			"description": "A unique SPA built by vue js made from scratch. This site has been build by HTML, Sass, Javascript, Vue.js",
 			"top": false,
 			"active": true
 		},
@@ -36,11 +47,11 @@
 		},		
 		{
 			"id": 3,
-			"title": "Kasper3",
-			"about" : "Web template",
-			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"title": "FormTester",
+			"about" : "vue form libraries",
+			"techs": ["HTML", "CSS", "Javascript","Vue"],
 			"photo": "shuffle-02.jpg",
-			"description": {},
+			"description": "FormTester is a project built to test different Form frameworks and libraries available for Vue.js. These libraries help simplify form creation, validation, and management in Vue applications. ",
 			"top": false,
 			"active": true
 		},
@@ -184,9 +195,9 @@
 		},
 		{
 			"id": 10,
-			"name": "Jenkins",
-			"source": "jenkins.svg",
-			"category": "tool"
+			"name": "Nuxt",
+			"source": "nuxt.svg",
+			"category": "frontend"
 		}
 	],
 	"Credit": [

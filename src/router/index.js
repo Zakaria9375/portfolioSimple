@@ -13,27 +13,6 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: () => import("@/components/routerViews/AboutView.vue"),
-      children: [
-        // {
-        //   path: "",
-        //   redirect: "about/skills"
-        // },
-        {
-          path: "skills",
-          name: "aboutSkills",
-          component: () => import("@/components/about/AboutSkills.vue")
-        },
-        {
-          path: "mindset",
-          name: "aboutMindset",
-          component: () => import("@/components/about/Aboutmindset.vue")
-        },
-        {
-          path: "story",
-          name: "aboutStory",
-          component: () => import("@/components/about/AboutStory.vue")
-        },
-      ]
     },
 		{
       path: "/portfolio",
