@@ -4,17 +4,17 @@
 			"id": 1,
 			"title": "My Portfolio",
 			"about" : "SPA by Vue.js",
-			"techs": ["HTML", "CSS", "Javascript","Vue"],
-			"photo": "webdev.webp",
+			"techs": ["Sass", "Javascript","Vue"],
+			"photo": "portfolio/webdev.webp",
 			"repos": [
-				{"title": "Github", "link": ""}
+				{"title": "Github", "link": "https://github.com/Zakaria9375/portfolioSimple"}
 			],
 			"gallery": [
-				"p1.png",
-				"p2.png",
-				"p3.png",
-				"p4.png",
-				"p5.png"
+				"portfolio/p1.png",
+				"portfolio/p2.png",
+				"portfolio/p3.png",
+				"portfolio/p4.png",
+				"portfolio/p5.png"
 			],
 			"description": "A unique SPA built by vue js made from scratch. This site has been build by HTML, Sass, Javascript, Vue.js",
 			"top": false,
@@ -22,69 +22,24 @@
 		},
 		{
 			"id": 2,
-			"title": "Kasper",
-			"about" : "Web template",
-			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
+			"title": "workit",
+			"about" : "Form tester",
+			"techs": ["SCSS", "Javascript","Vue", "Formkit", "VueUse", "Vuelidate", "vue-i18n"],
 			"repos": [
-				{"title": "Github", "link": ""},
-				{"title": "Docker", "link": ""}, 
+				{"title": "Github", "link": "https://github.com/Zakaria9375/workit"},
 				{"title": "Live", "link": ""}
 			],
-			"photo": "shuffle-02.jpg",
+			"photo": "workit/workitt.png",
 			"gallery": [
-				"cat-01.jpg",
-				"cat-02.jpg",
-				"cat-03.jpg",
-				"cat-04.jpg",
-				"cat-05.jpg",
-				"cat-06.jpg"
+				"workit/w1.png",
+				"workit/w2.png",
+				"workit/w3.png",
+				"workit/w4.png",
+				"workit/w5.png",
+				"workit/w6.png"
 			],
-			"description": "Solar Massasje is a Norwegian professional maseur marketing website. The site runs on WordPress CMS and utilizes modern design with good user experience.",
-			"top": true,
-			"active": true
-		
-		},		
-		{
-			"id": 3,
-			"title": "FormTester",
-			"about" : "vue form libraries",
-			"techs": ["HTML", "CSS", "Javascript","Vue"],
-			"photo": "shuffle-02.jpg",
-			"description": "FormTester is a project built to test different Form frameworks and libraries available for Vue.js. These libraries help simplify form creation, validation, and management in Vue applications. ",
+			"description": "A project that has been built to demonstrate the pros and cons of forms libraries of vue js and to see how it goes when we use them. The most common libraries are Formkit, Vee-validate, Vuelidate. These libraries help simplify form creation, validation, and management in Vue applications. Inside this app, Facebook form Ecommerce form has been built by Formkit, Coffee-Shop has been built by vuelidate, Coming soon in Amazon Form with Vee-Validate. Of Course, we can do all of that without any library. But It is good to discover all the options.",
 			"top": false,
-			"active": true
-		},
-		{
-			"id": 4,
-			"title": "Kasper4",
-			"about" : "Web template",
-			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
-			"photo": "shuffle-02.jpg",
-			"description": {},
-			"top": true,
-			"active": true
-		},
-		{
-			"id": 5,
-			"title": "Main",
-			"about" : "Web template",
-			"techs": ["HTML", "CSS", "Javascript","HTML", "CSS", "Javascript"],
-			"repos": [
-				{"title": "Github", "link": ""},
-				{"title": "Docker", "link": ""}, 
-				{"title": "Live", "link": ""}
-			],
-			"photo": "shuffle-02.jpg",
-			"gallery": [
-				"cat-01.jpg",
-				"cat-02.jpg",
-				"cat-03.jpg",
-				"cat-04.jpg",
-				"cat-05.jpg",
-				"cat-06.jpg"
-			],
-			"description": "Solar Massasje is a Norwegian professional maseur marketing website. The site runs on WordPress CMS and utilizes modern design with good user experience.",
-			"top": true,
 			"active": true
 		
 		}

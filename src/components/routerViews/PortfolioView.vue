@@ -45,7 +45,7 @@
 				@include fontoo(32px, bold, $wclr)
 				letter-spacing: 1px
 			p
-				padding: 15px 0 25px
+				padding: 15px 16px 25px
 				@include fontoo(1.2rem, 400, $wclr)
 				opacity: 0.8
 				> span

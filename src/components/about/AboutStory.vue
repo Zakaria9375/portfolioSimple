@@ -55,15 +55,21 @@
 				@include fontoo(1.2rem, 500, $wclr)
 				opacity: 0.95
 	.photo
+		height: 80%
+		display: flex
+		align-items: center
+		justify-content: center
 		@include more($smS)
 			flex-basis: 35%
 			max-width: 350px
 		@include less($smS)
 			width: min(400px, 100%)
 		img
-			max-width: 100%
+			max-width: 300px
+			max-height: 300px
+			width: 100%
 			aspect-ratio: 1
-			height: auto
+			height: 100%
 			object-fit: cover 
 			border-radius: 50%
 			filter: brightness(80%)
